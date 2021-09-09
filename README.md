@@ -5,12 +5,12 @@ This is a Digital Audio Workstation (DAW) made in Python utilizing the Kivy fram
 
 This program has been written on a *Windows 10* device using *Python 3.8.5* and should run on other *Python 3* versions. For other operating systems, *Mac* user will need to find another way of installing *PyAudio*, as *PyAudio* is currently downloaded with a local *.whl* file. *Linux* systems have not been tested. However, Kivy claims to be cross platform and so this program should be relatively easily ran on other operating systems.
 
-The following commands have been tested with *Windows 10* using the standard *Command Prompt*. This project can be downloaded with **git clone https://github.com/akiviv/Digital-Audio-Workstation.git**. After cloning, it is recomended that the user would download the modules to a virtual environment. This can be done on *Windows* by first changing to the project folder **cd Digital-Audio-Workstation** and running **python -m venv env** and then running **env\Scripts\activate.bat**. Now the virtual environment is active and all modules can be installed with **pip install -r requirements.txt**. The program can now be executed by running **python main.py**. Optionally, you can change color of slider tracks and buttons darker by copying **defaulttheme-0.png** from **Extras** folder to **YOUR_DIRECTORY\Digital-Audio-Workstation\env\Lib\site-packages\kivy\data\images** and overwriting the original **defaulttheme-0.png** file.
+The following commands have been tested with *Windows 10* using the standard *Command Prompt*. This project can be downloaded with **git clone https://github.com/Aki-Kivivirta/Digital-Audio-Workstation.git**. After cloning, it is recomended that the user would download the modules to a virtual environment. This can be done on *Windows* by first changing to the project folder **cd Digital-Audio-Workstation** and running **python -m venv env** and then running **env\Scripts\activate.bat**. Now the virtual environment is active and all modules can be installed with **pip install -r requirements.txt**. The program can now be executed by running **python main.py**. Optionally, you can change color of slider tracks and buttons darker by copying **defaulttheme-0.png** from **Extras** folder to **YOUR_DIRECTORY\Digital-Audio-Workstation\env\Lib\site-packages\kivy\data\images** and overwriting the original **defaulttheme-0.png** file.
 
 
 **TLDR**  
 Run these commands in the *Command Prompt* of your *Windows 10* device, in the directory of your choosing  
-**git clone https://github.com/akiviv/Digital-Audio-Workstation.git**  
+**git clone https://github.com/Aki-Kivivirta/Digital-Audio-Workstation.git**  
 **cd Digital-Audio-Workstation**  
 **python -m venv env**  
 **env\Scripts\activate.bat**  
@@ -23,7 +23,7 @@ Tracks can be added by pressing the **+** button and removed by first selecting 
 
 Recording audio can be initiated by first selecting the tracks to record by pressing the **R** button, then pressing the red round symbol in the top left area and stopped by pressing the same button again. Other buttons in the top left area are assumed to be self explanatory.
 
-Split mode can be accessed by pressing *'x'* on your keyboard, delete mode with *'backspace'* and dragging mode, which is the default, by pressing any other key. There is *guitar.wav* in the **Recorded Audio Files** folder, if you want to try how drag and drop works but don't have *.wav* files of your own.
+Split mode can be accessed by pressing *'x'* on your keyboard, delete mode with *'backspace'* and dragging mode, which is the default, by pressing any other key. There is *guitar.wav* in the **Recorded Audio Files** folder, if you want to try how drag and drop works but don't have *.wav* files of your own. 
 
 Where audio is recorded and played back can be controled by grabbing the small down pointing arrow or by typing values to the box on the top center of the screen.
 
@@ -47,6 +47,7 @@ The parametric equalizer can be accessed by pressing the **Parametric equalizer*
 - Compile the program to a single executable file with a module like 'pyinstaller'
 - Add the ability to control the maximum amount of time in the program
 - Screen size dependent logic for initializing parametric equalizer dots
+- Option to reconnect the keyboard if it has failed on initialization
 
 ## Bugs
 
@@ -54,7 +55,7 @@ The parametric equalizer can be accessed by pressing the **Parametric equalizer*
 
 The program may crash after new files have been recorded. This is might be due to all *.wav* files being constantly open, although the program has never crashed when dragging and dropping *.wav* files to the program. In the future I might investigate lighter methods for opening audio while still being in control of every single audio sample.
 
-"Keyboard not available!". This is printed to the console by main.py "MainView._keyboard_closed()", if the user's keyboard is not available. When the keyboard is not available the user cannot change to splitting or deleting modes, but only move sounds in the layout with the normal mode. This occurs on some runs.
+"Keyboard not available!". This is printed to the console by main.py "MainView._keyboard_closed()", if the user's keyboard is not available. When the keyboard is not available the user cannot change to splitting or deleting modes, but only move sounds in the layout with the normal mode. This occurs on some runs and may be "fixed" by running the program again.
 
 ### Non hostile
 "Warning:
